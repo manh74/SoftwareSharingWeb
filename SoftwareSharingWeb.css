@@ -1,0 +1,44 @@
+.header{
+			background-color: #00f5f5;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		.header a:hover{
+			color: red;
+		}
+		.logo{
+			background-color:  #fafafa;
+		}
+		.image{
+			height: 400px;
+			width: 290px;
+		}
+
+		.test1 {
+			 white-space: nowrap; 
+			 width: 290px; 
+			 overflow: hidden;
+			 text-overflow: ellipsis;
+		}
+		.border{
+			border: 1px solid #d2d2d9;
+			height: 550px;
+			width: 290px;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.priceColor{
+			color: red;
+		}
+
+		.container{
+			justify-content: center;
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+		}
+		.btDownload{
+			color: red;
+		}

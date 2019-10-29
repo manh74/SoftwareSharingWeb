@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Software Sharing Web</title>
+	<link rel="stylesheet" type="text/css" href="SoftwareSharingWeb.css">
+</head>
+<body>
+	<div class="header">
+		<div>
+	    <a onclick="home()"><b>Software</b>  Sharing</a>
+        <a onclick="home()">Home</a>
+        <a onclick="displayFavorite()">Favorite</a>
+        <a onclick="upload()">New Post</a>
+        <a onclick="update()">Update</a>
+        <a onclick="deletes()">Delete Post</a>
+    	</div>
+    	<div>
+    		<a href="http://facebook.com/14052k"><img src="facebook.png"></a>
+    		<a href="https://www.linkedin.com/in/nguy%E1%BB%85n-m%E1%BA%A1nh-060296184/"><img src="linkedin.png"></a>
+    	</div>
+	</div>
+	<div class="logo">
+	<center>
+		<img src="logo.jpg" height="120px" width="250">
+		<p style="font-size: 29px; color: red;">Mạnh's Software</p>
+	</center>
+	</div>
+	<div id="container"></div>
+
+	<script type="text/javascript">
+		var container = document.getElementById('container');
+		var post = [{
+			image: 'Driver-Talent-Pro.png',
+			title: 'Driver Talent Pro 7.1.22.62]',
+			info: 'Driver Talent  ( trước đây là DriveTheLife ) là một ứng dụng dễ sử dụng được thiết kế để giúp bạn có được các trình điều khiển cần thiết cho hệ thống của mình. Nó cho phép bạn tải xuống và cài đặt các bản cập nhật trình điều khiển, sao lưu và khôi phục các trình điều khiển và gỡ cài đặt / gỡ bỏ các trình điều khiển phần cứng không sử dụng cho tất cả người dùng hệ thống của bạn.',
+			link: 'https://zjueduvn-my.sharepoint.com/:u:/g/personal/nopromises15_office365vn_work/ET0QtMWCzxJEtYXz2J7R1iQBgq_heBGk5Nbv5kpTBD7C4w?e=Mmp4bo'
+		},
+		{
+			image: 'Softtonghop_Adobe Lightroom CC 2015.png',
+			title: 'Adobe Lightroom CC 2015 (Lightroom 6) - Full Crack',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: 'Adobe Photoshop CC 2019.jpg',
+			title: 'Adobe Photoshop CC.2019 v20.0.4.26077',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: 'WinRAR-5.70-Crack-Final-Full-Version-32-64-Bit-Latest.jpg',
+			title: 'WinRAR 5.70 Final Full ( x86 / x64 ) - Nén và giải nén file trên máy tính',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: '[STH] Typing Buddy 1.6.png',
+			title: 'Typing Buddy 1.6 - Phần mềm hỗ trợ gõ tắt cho PC',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: 'Softtonghop_Adobe Illustrator CC 2015.3.png',
+			title: 'Adobe Illustrator CC 2015.3 (x86/x64) - Full Crack',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: 'Softtonghop_Adobe Lightroom CC 2015.png',
+			title: 'Adobe Lightroom CC 2015 (Lightroom 6) - Full Crack',
+			info: 'mmmmmm',
+			link: '.......'
+		},
+		{
+			image: 'Softtonghop_Adobe Lightroom CC 2015.png',
+			title: 'Adobe Lightroom CC 2015 (Lightroom 6) - Full Crack',
+			info: 'mmmmmm',
+			link: '.......'
+		}];
+		console.log(post);
+		display();
+
+		var favorite = [];
+
+		function display(){
+			container.className = "container";
+			for(var i =0; i < post.length; i++){
+				var image = document.createElement("img");
+				image.className = "image";
+				image.src = post[i].image;
+
+				var ptitle = document.createElement("b");
+				ptitle.innerText = post[i].title;
+
+				var pinfo = document.createElement("p");
+				pinfo.innerText =  post[i].info;
+				pinfo.className = "test1";
+
+				var btDownload = document.createElement("button");
+				btDownload.className = "btDownload";
+				btDownload.innerText = "Tải ngay";
+
+				var btFavorite = document.createElement("button");
+				btFavorite.className = "btDownload";
+				btFavorite.innerText = "Favorite";
+				btFavorite.onclick = function(args){
+					return function(){
+						favorite.push(post[args]);
+						console.log(favorite);
+					}
+				}(i);	
+
+				var getLink = document.createElement("a");
+				getLink.href = post[i].link;
+
+				getLink.appendChild(btDownload);
+
+				var div1 = document.createElement("div");
+				div1.className = "border";
+				div1.appendChild(image);
+				div1.appendChild(ptitle);
+				div1.appendChild(pinfo);
+				div1.appendChild(getLink);
+				div1.appendChild(btFavorite);
+
+				container.appendChild(div1);
+			}
+		}
+
+		function displayFavorite(){
+			container.innerText = "";
+			for(var i =0; i < favorite.length; i++){
+				var image = document.createElement("img");
+				image.className = "image";
+				image.src = favorite[i].image;
+
+				var ptitle = document.createElement("b");
+				ptitle.innerText = favorite[i].title;
+
+				var pinfo = document.createElement("p");
+				pinfo.innerText =  favorite[i].info;
+				pinfo.className = "test1";
+
+				var btDownload = document.createElement("button");
+				btDownload.className = "btDownload";
+				btDownload.innerText = "Tải ngay";
+
+				var btFavorite = document.createElement("button");
+				btFavorite.className = "btDownload";
+				btFavorite.innerText = "Delete Favorite";
+				btFavorite.onclick = function(args){
+					return function(){
+						favorite.splice(post[args],1);
+						console.log(favorite);
+						displayFavorite();
+					}
+				}(i)
+
+				var getLink = document.createElement("a");
+				getLink.href = post[i].link;
+
+				getLink.appendChild(btDownload);
+
+				var div1 = document.createElement("div");
+				div1.className = "border";
+				div1.appendChild(image);
+				div1.appendChild(ptitle);
+				div1.appendChild(pinfo);
+				div1.appendChild(getLink);
+				div1.appendChild(btFavorite);
+
+				container.appendChild(div1);
+			}
+		}
+
+		function home(){
+			container.innerText = '';
+			display();
+		}
+		function upload(){
+			container.innerText = '';
+		}
+
+		function update(){
+			container.innerText = '';
+		}
+
+		function deletes(){
+			container.innerText = '';
+		}
+	</script>
+
+</body>
+</html>
