@@ -1,5 +1,5 @@
-.header{
-			background-color: #00f5f5;
+		.header{
+			background-color: #d0e2e6;
 			width: 100%;
 			height: 100%;
 			display: flex;
@@ -12,6 +12,7 @@
 			background-color:  #fafafa;
 		}
 		.image{
+			margin-top: 10px;
 			height: 400px;
 			width: 290px;
 		}
@@ -24,8 +25,8 @@
 		}
 		.border{
 			border: 1px solid #d2d2d9;
-			height: 550px;
-			width: 290px;
+			height: 560px;
+			width: 300px;
 			text-align: center;
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -35,10 +36,22 @@
 		}
 
 		.container{
-			justify-content: center;
+			justify-content: space-around;
 			display: grid;
 			grid-template-columns: auto auto auto auto;
 		}
 		.btDownload{
 			color: red;
+		}
+		.border2{
+			border: 1px solid #d2d2d9;
+			height: 750px;
+			width: 1090px;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 100px;
+			justify-content: center;
+		}
+		.setmargin{
+			margin-top: 100px;
 		}
