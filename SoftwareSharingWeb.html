@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Software Sharing Web</title>
-	<link rel="stylesheet" type="text/css" href="SoftwareSharingWeb.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/SoftwareSharingWeb.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="header">
@@ -16,8 +16,8 @@
         <a onclick="deletes()">Delete Post</a>
     	</div>
     	<div>
-    		<a href="http://facebook.com/14052k"><img src="facebook.png"></a>
-    		<a href="https://www.linkedin.com/in/nguy%E1%BB%85n-m%E1%BA%A1nh-060296184/"><img src="linkedin.png"></a>
+    		<a href="http://facebook.com/14052k"><img src="../Img/facebook.png"></a>
+    		<a href="https://www.linkedin.com/in/nguy%E1%BB%85n-m%E1%BA%A1nh-060296184/"><img src="../Img/linkedin.png"></a>
     	</div>
 	</div>
 	<div class="logo">
@@ -32,6 +32,30 @@
 		</center>
 	</div>
 	<div id="container"></div>
+	<div class="footer">
+	<div>
+	<br><br>
+	<b>Giới thiệu</b>
+	<br>
+   <p>Biên tập nội dung: Nguyễn Mạnh.
+   <br>
+   Chịu tránh nhiệm bản quyền: Nguyễn Mạnh.
+   <br>Địa chỉ: Đà Nẵng.<br>
+   <i>Chỉ được phát hành lại thông tin từ website này khi có sự đồng ý bằng văn bản của admin.</i></p>
+    </div>
+    <div style="margin-left: 20px"> 
+    <br><br>
+    <b>Liên hệ</b>
+    <br>
+    <br>Hotline: 0366 908 087
+    <br>Email: manh.nguyen21@student.passerellesnumeriques.org
+    <br>Facebook: facebook.com/14052k</p>
+     </div>
+    </div>
+    <div class="footer2">
+    <span>Copyright © 2019 Nguyễn Mạnh IT | Website Chia Sẻ Ứng Dụng Window - All Right Reserved.</span>	
+    <br><br><br>
+	</div>
 
 	<script type="text/javascript">
 		var container = document.getElementById('container');
@@ -167,9 +191,18 @@
 				btFavorite.innerText = "Favorite";
 				btFavorite.onclick = function(args){
 					return function(){
-						favorite.push(post[args]);
-						console.log(favorite);
+						if(favorite.length!=0){
+						for(var m = 0; m < favorite.length; m ++){
+						if(post[args].title!=favorite[m].title)
+							favorite.push(post[args]);
+						else
+							alert("Bạn đã thêm ứng dụng này vào Favorite trước đó!");
+							break;
 					}
+				}
+				else 
+					favorite.push(post[args]);
+				}
 				}(i);	
 
 				var getLink = document.createElement("a");
@@ -215,6 +248,10 @@
 						favorite.splice(post[args],1);
 						console.log(favorite);
 						displayFavorite();
+
+						if(favorite.length==0){
+							alert("Không có ứng dụng yêu thích nào!");
+						}
 					}
 				}(i)
 
@@ -252,9 +289,9 @@
 		}	
 
 		var ipsearch = document.getElementById("ipsearch");
-		var search = [];
-
+		
 		function searchPost(){
+			var search = [];
 			for(var i = 0; i < post.length; i++){
 				if(post[i].title==ipsearch.value){
 					search.push(post[i]);				
@@ -307,6 +344,10 @@
 						container.appendChild(div1);
 					}
 					}
+				else {
+					alert("Ứng dụng bạn muốn tìm không tồn tại");
+					break;
+				}
 				}
 		}
 	</script>
