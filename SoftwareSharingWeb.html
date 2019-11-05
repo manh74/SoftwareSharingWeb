@@ -9,12 +9,12 @@
 <body>
 	<div class="header">
 		<div>
-	    <a onclick="home()"><b>Software</b>  Sharing</a>
-        <a onclick="home()">Home</a>
-        <a onclick="displayFavorite()">Favorite</a>
-        <a onclick="newPost()">New Post</a>
-        <a onclick="deletePost()">Delete Post</a>
-        <a onclick="loginAd()">Admin Login</a>
+		    <a onclick="home()"><b>Software</b>  Sharing</a>
+	        <a onclick="home()">Home</a>
+	        <a onclick="displayFavorite()">Favorite</a>
+	        <a onclick="newPost()">New Post</a>
+	        <a onclick="deletePost()">Delete Post</a>
+	        <a onclick="loginAd()">Admin Login</a>
     	</div>
     	<div>
     		<a href="http://facebook.com/14052k"><img src="../Img/facebook.png"></a>
@@ -22,14 +22,14 @@
     	</div>
 	</div>
 	<div class="logo">
-	<center>
-		<img src="../Img/logo.jpg" height="120px" width="250">
-		<p style="font-size: 29px; color: red;">Mạnh's Software</p>
-	</center>
+		<center>
+			<img src="../Img/logo.jpg" height="120px" width="250">
+			<p style="font-size: 29px; color: red;">Mạnh's Software</p>
+		</center>
 	</div>
 	<div style="background-color: #d0e2e6" id="search">
 		<center>
-		<input id="ipsearch" type="text" name="filter_name" placeholder="Tìm kiếm sản phẩm..."<div><button onclick="searchPost()" type="submit" class="btn icon-fallback-text"> <i class="fa fa-search"></i> </button></div>
+		   <input id="ipsearch" type="text" name="filter_name" placeholder="Tìm kiếm sản phẩm..."<div><button onclick="searchPost()" type="submit" class="btn icon-fallback-text"> <i class="fa fa-search"></i> </button></div>
 		</center>
 	</div>
 	
@@ -76,40 +76,39 @@
 			<input type="text" id="linktai">
 		</div>
 		<div>
-			<button onclick="add()" class="btn btn-primary">Add</button>
+			<button onclick="add()" class="btn btn-primary" id="add">Add</button>
 		</div>	
 
 	</div>
 	<div class="footer">
-	<div>
-	<br><br>
-	<b>Giới thiệu</b>
-	<br>
-   <p>Biên tập nội dung: Nguyễn Mạnh.
-   <br>
-   Chịu tránh nhiệm bản quyền: Nguyễn Mạnh.
-   <br>Địa chỉ: Đà Nẵng.<br>
-   <i>Chỉ được phát hành lại thông tin từ website này khi có sự đồng ý bằng văn bản của admin.</i></p>
-    </div>
-    <div style="margin-left: 20px"> 
-    <br><br>
-    <b>Liên hệ</b>
-    <br>
-    <br>Hotline: 0366 908 087
-    <br>Email: manh.nguyen21@student.passerellesnumeriques.org
-    <br>Facebook: facebook.com/14052k</p>
-     </div>
+		<div>
+			<br><br>
+			<b>Giới thiệu</b>
+			<br>
+		    <p>Biên tập nội dung: Nguyễn Mạnh.
+		    <br>
+		    Chịu tránh nhiệm bản quyền: Nguyễn Mạnh.
+		    <br>Địa chỉ: Đà Nẵng.<br>
+		    <i>Chỉ được phát hành lại thông tin từ website này khi có sự đồng ý bằng văn bản của admin.</i></p>
+    	</div>
+	    <div style="margin-left: 20px"> 
+		    <br><br>
+		    <b>Liên hệ</b>
+		    <br>
+		    <br>Hotline: 0366 908 087
+		    <br>Email: manh.nguyen21@student.passerellesnumeriques.org
+		    <br>Facebook: facebook.com/14052k</p>
+	    </div>
     </div>
     <div class="footer2">
-    <span>Copyright © 2019 Nguyễn Mạnh IT | Website Chia Sẻ Ứng Dụng Window - All Right Reserved.</span>	
-    <br><br><br>
+	    <span>Copyright © 2019 Nguyễn Mạnh IT | Website Chia Sẻ Ứng Dụng Window - All Right Reserved.</span>	
+	    <br><br><br>
 	</div>
-
 	<script type="text/javascript">
 		var container = document.getElementById('container');
 		var post = [{
 			image: '../Img/Driver-Talent-Pro.png',
-			title: 'Driver Talent Pro 7.1.22.62]',
+			title: 'Driver Talent Pro 7.1.22.62',
 			info: 'Driver Talent  ( trước đây là DriveTheLife ) là một ứng dụng dễ sử dụng được thiết kế để giúp bạn có được các trình điều khiển cần thiết cho hệ thống của mình. Nó cho phép bạn tải xuống và cài đặt các bản cập nhật trình điều khiển, sao lưu và khôi phục các trình điều khiển và gỡ cài đặt / gỡ bỏ các trình điều khiển phần cứng không sử dụng cho tất cả người dùng hệ thống của bạn.',
 			link: 'https://zjueduvn-my.sharepoint.com/:u:/g/personal/nopromises15_office365vn_work/ET0QtMWCzxJEtYXz2J7R1iQBgq_heBGk5Nbv5kpTBD7C4w?e=Mmp4bo'
 		},
@@ -157,6 +156,7 @@
 		}];
 		console.log(post);
 		display();
+		
 
 		var admin = [{
 			name: "Nguyễn Mạnh",
@@ -179,6 +179,10 @@
 			var back = 0;
 			container.className = "container";
 			for(var i =0; i < post.length; i++){
+				var number = []
+				number[i] = localStorage.getItem("count-number");
+				localStorage.setItem("count-number",number[i]);
+
 				var image = document.createElement("img");
 				image.className = "image";
 				image.src = post[i].image;
@@ -217,6 +221,14 @@
 							var ptitle = document.createElement("b");
 							ptitle.innerText = post[args].title;
 
+							var pview = document.createElement("i");
+							var number = [];
+							number[j] = localStorage.getItem("count-number");
+							number[j]++;
+							localStorage.setItem("count-number",number[i]);
+
+							pview.innerHTML = '[' + number[j] + ' lượt view]';
+
 							var pinfo = document.createElement("p");
 							pinfo.innerText =  post[args].info;
 
@@ -232,12 +244,18 @@
 							btDownload.innerText = "Tải ngay";
 
 							var pnote = document.createElement("i");
-							pnote.innerHTML = "<br> Note: Phiên bản này chỉ dành cho hệ điều hành <b>Windows</b>"
+							pnote.innerHTML = "<br> Note: Phiên bản này chỉ dành cho hệ điều hành <b>Windows</b>";
+
+							var getLink = document.createElement("a");
+							getLink.href = post[args].link;
+
+							getLink.appendChild(btDownload);
 
 							div1.appendChild(div2);
 							div1.appendChild(ptitle);
+							div1.appendChild(pview);
 							div1.appendChild(pinfo);
-							div1.appendChild(btDownload);
+							div1.appendChild(getLink);
 							div1.appendChild(pnote);
 							container.appendChild(div1);
 						}
@@ -364,6 +382,7 @@
 				document.getElementById("login").style.display = 'none';
 				document.getElementById("title").style.display = 'block';
 				document.getElementById("title").innerText = "Upload new post";
+				display();
 				document.getElementById("container2").style.display = 'block';
 			}
 			else{
@@ -391,6 +410,7 @@
 			else {
 				document.getElementById("title").innerText = "Bạn đã đăng nhập thành công";
 				document.getElementById("login").style.display = 'none';
+				container.innerText = '';
 			}
 				
 		}
@@ -412,6 +432,7 @@
 				alert("Đăng nhập thành công");
 				document.getElementById("login").style.display = 'none';
 				document.getElementById("title").style.display = 'block';
+				container.innerText = '';
 
 				if(choose==1){
 					document.getElementById("title").innerText = "Upload new post";
@@ -420,12 +441,12 @@
 				}
 				else if(choose==2){
 					document.getElementById("title").innerText = "Delete post";
-					// document.getElementById("container2").style.display = 'none';
 					deletePost();
 				}
-
-				else
+				else if(choose==0){
 					document.getElementById("title").innerText = "Bạn đã đăng nhập thành công";
+					container.innerText = '';
+				}
 			}
 			
 		}
@@ -449,12 +470,10 @@
 				info: pdescription.innerText,
 				link: plinkdownload.innerText
 			}
-
 			if(ptitle.innerText!=""||pdescription.innerText!=""||plinkdownload.innerText!=''||plinkpicture.src !=''){
 				post.push(postNew);
 				display();
 				document.getElementById("container2").style.display = 'block';
-
 			}
 		}
 
@@ -480,19 +499,18 @@
 		}
 
 		function deletePost(){
+			container.innerText = '';
 			choose = 2;
-			document.getElementById("container2").style.display = 'none';
 			document.getElementById("search").style.display = 'none';
-			document.getElementById("title").style.display = 'block';
-			document.getElementById("container").style.display = 'block';
-			container.innerText = "";
+			
 			if(permission == "Success"){
-
 				document.getElementById("login").style.display = 'none';
 				document.getElementById("title").style.display = 'block';
 				document.getElementById("title").innerText = "Delete post";
+				document.getElementById("search").style.display = 'block';
+				document.getElementById("container2").style.display = 'none';
+				var back = 0;
 				container.className = "container";
-				
 				for(var i =0; i < post.length; i++){
 					var image = document.createElement("img");
 					image.className = "image";
@@ -505,19 +523,44 @@
 					pinfo.innerText =  post[i].info;
 					pinfo.className = "test1";
 
-					var btDelete= document.createElement("button");
+					var btDownload = document.createElement("button");
+					btDownload.className = "btn btn-danger";
+					btDownload.innerText = "Tải ngay";
+
+					var btDelete = document.createElement("button");
 					btDelete.className = "btn btn-primary";
 					btDelete.innerText = "Delete";
-					btFavorite.onclick = function(args){
+					btDelete.onclick = function(args){
 						return function(){
-							post.splice(post[args],1);
+							post.splice(args,1);
 							deletePost();
-
 							if(post.length==0){
 								alert("Không có ứng dụng nào!");
 							}
 						}
 					}(i);
+
+
+					var btUpdate = document.createElement("button");
+					btUpdate.className = "btn btn-warning";
+					btUpdate.innerText = "Update";
+					btUpdate.onclick = function(arg){
+						return function(){
+							post.splice(arg,1);
+							document.getElementById("add").innerText = "Update";
+							document.getElementById("container2").style.display = 'block';
+							document.getElementById("tieude").value = post[arg].title;
+							document.getElementById("mota").value = post[arg].info;
+							document.getElementById("linktai").value = post[arg].link;
+							document.getElementById("linkanh").value = post[arg].image;
+
+						}
+					}(i);		
+
+					var getLink = document.createElement("a");
+					getLink.href = post[i].link;
+
+					getLink.appendChild(btDownload);
 
 					var div1 = document.createElement("div");
 					div1.className = "border";
@@ -525,19 +568,20 @@
 					div1.appendChild(ptitle);
 					div1.appendChild(pinfo);
 					div1.appendChild(getLink);
-					div1.appendChild(btFavorite);
+					div1.appendChild(btDelete);
+					div1.appendChild(btUpdate);
 
 					container.appendChild(div1);
-
-
-			}}
+				}
+			}
 			else{
 				document.getElementById("title").style.display = 'block';
 				document.getElementById("title").innerText = "Bạn phải đăng nhập để thực hiện chức năng này";
 				document.getElementById("login").style.display = 'block';
-			}
+			}		
+		}
 
-			}	
+
 
 		var ipsearch = document.getElementById("ipsearch");
 		
@@ -572,14 +616,22 @@
 
 						var btFavorite = document.createElement("button");
 						btFavorite.className = "btn btn-primary";
-						btFavorite.innerText = "Delete Favorite";
+						btFavorite.innerText = "Favorite";
 						btFavorite.onclick = function(args){
 							return function(){
-								favorite.splice(search[args],1);
-								console.log(favorite);
-								displayFavorite();
-							}
-						}(i);
+								if(favorite.length!=0){
+								for(var m = 0; m < favorite.length; m ++){
+									if(search[args].title!=favorite[m].title)
+											favorite.push(search[args]);
+										else
+											alert("Bạn đã thêm ứng dụng này vào Favorite trước đó!");
+											break;
+									}
+												}
+									else 
+											favorite.push(search[args]);
+										}
+						}(i);	
 
 						var getLink = document.createElement("a");
 						getLink.href = search[i].link;
@@ -596,7 +648,7 @@
 
 						container.appendChild(div1);
 					}
-					break;
+						break;
 					}
 				}
 		}
