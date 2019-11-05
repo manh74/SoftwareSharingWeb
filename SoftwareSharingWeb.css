@@ -1,81 +1,75 @@
+.header{
+	background-color: #d0e2e6;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.header a{
+	margin-left:  30px;
+}
+.logo{
+	background-color:  #fafafa;
+}
+.image{
+	margin-top: 10px;
+	height: 300px;
+	width: 240px;
+}
+.container2{
+	text-align: center;
+}
+.test1 {
+	white-space: nowrap;
+	width: 240px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.border{
+	border: 1px solid #d2d2d9;
+	height: 480px;
+	width: 250px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.priceColor{
+	color: red;
+}
+.container{
+	justify-content: space-around;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+}
 
-		.header{
-			background-color: #d0e2e6;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: space-between;
-		}
-		.header a{
-			margin-left:  30px;
-		}
-		.logo{
-			background-color:  #fafafa;
-		}
-		.image{
-			margin-top: 10px;
-			height: 300px;
-			width: 240px;
-		}
-
-		.container2{
-			text-align: center;
-		}
-
-		.test1 {
-			 white-space: nowrap; 
-			 width: 240px; 
-			 overflow: hidden;
-			 text-overflow: ellipsis;
-		}
-		.border{
-			border: 1px solid #d2d2d9;
-			height: 480px;
-			width: 250px;
-			text-align: center;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		.priceColor{
-			color: red;
-		}
-
-		.container{
-			justify-content: space-around;
-			display: grid;
-			grid-template-columns: auto auto auto auto;
-		}
-		
-		.border2{
-			border: 1px solid #d2d2d9;
-			height: 750px;
-			width: 1090px;
-			text-align: center;
-			margin-top: 20px;
-			margin-bottom: 100px;
-			justify-content: center;
-		}
-		.setmargin{
-			margin-top: 100px;
-		}
-		.footer{
-			background-color: #d0e2e6;
-			display: flex;
-			justify-content: center;
-		    text-decoration-style: none;
-		}
-
-		.footer2{
-			background-color:  #d0e2e6;
-			display: flex;
-			justify-content: center;
-		   text-decoration-style: none;
-		}
-
-		.login-form{
-			background-color:#d0e2e6; 
-			margin-top: 20px;
-			margin-bottom: 100px;
-			border: 1px solid green;
-			height: 200px;
-		}
+.border2{
+	border: 1px solid #d2d2d9;
+	height: 750px;
+	width: 1090px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	justify-content: center;
+}
+.setmargin{
+	margin-top: 100px;
+}
+.footer{
+	background-color: #d0e2e6;
+	display: flex;
+	justify-content: center;
+	text-decoration-style: none;
+}
+.footer2{
+	background-color:  #d0e2e6;
+	display: flex;
+	justify-content: center;
+	text-decoration-style: none;
+}
+.login-form{
+	background-color:#d0e2e6;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	border: 1px solid green;
+	height: 200px;
+}
