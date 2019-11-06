@@ -104,6 +104,7 @@
 		<br><br><br>
 	</div>
 	<script type="text/javascript">
+		
 		var container = document.getElementById('container');
 		var post = [{
 			image: '../Img/Driver-Talent-Pro.png',
@@ -200,7 +201,7 @@
 						btBack.innerText = "Back";
 						var div0 = document.createElement("div");
 						div0.appendChild(btBack);
-												container.appendChild(div0);
+							container.appendChild(div0);
 							back++;
 							container.innerText = '';
 							display();
@@ -303,7 +304,7 @@
 				btFavorite.innerText = "Delete Favorite";
 				btFavorite.onclick = function(args){
 					return function(){
-						favorite.splice(post[args],1);
+						favorite.splice(args,1);
 						console.log(favorite);
 						displayFavorite();
 						if(favorite.length==0){
@@ -421,8 +422,13 @@
 			}
 			if(ptitle.innerText!=""||pdescription.innerText!=""||plinkdownload.innerText!=''||plinkpicture.src !=''){
 				post.push(postNew);
-				display();
-				document.getElementById("container2").style.display = 'block';
+				if(choose==1){
+					display();
+					document.getElementById("container2").style.display = 'block';
+				}
+				else
+					deletes();
+				
 			}
 		}
 	
@@ -486,15 +492,15 @@
 					btUpdate.innerText = "Update";
 					btUpdate.onclick = function(arg){
 						return function(){
-							post.splice(arg,1);
 							document.getElementById("add").innerText = "Update";
 							document.getElementById("container2").style.display = 'block';
 							document.getElementById("tieude").value = post[arg].title;
 							document.getElementById("mota").value = post[arg].info;
 							document.getElementById("linktai").value = post[arg].link;
 							document.getElementById("linkanh").value = post[arg].image;
+							post.splice(arg,1);
 						}
-							}(i);
+					}(i);
 					var getLink = document.createElement("a");
 					getLink.href = post[i].link;
 					getLink.appendChild(btDownload);
@@ -513,7 +519,7 @@
 				document.getElementById("title").style.display = 'block';
 				document.getElementById("title").innerText = "Bạn phải đăng nhập để thực hiện chức năng này";
 				document.getElementById("login").style.display = 'block';
-					}
+			}
 		}
 		var ipsearch = document.getElementById("ipsearch");
 		
